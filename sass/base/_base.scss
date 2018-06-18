@@ -1,0 +1,35 @@
+/*universal selector - global reset for all browsers*/
+*,
+*::after,
+*::before {
+	margin:0;
+	padding:0;
+	box-sizing:inherit; /*will be inherited from the body*/
+}
+
+html {
+	font-size: 62.5%; /*1 rem will equal 10px in this case - allows for user defined font sizes*/
+
+	@include respond(tab-land) {
+		font-size: 56.25%;  //1rem = 9px
+	}
+
+	@include respond(tab-port) {
+		font-size: 50%; //1rem = 8px
+	}
+
+	@include respond(big-desktop) {
+		font-size: 75%; //1rem = 12px
+	}
+
+
+}
+
+body {
+	box-sizing:border-box;
+	padding:3rem; /*gives the impression of a page border*/
+
+	@include respond(tab-port) {
+		padding: 0;
+	}
+}
